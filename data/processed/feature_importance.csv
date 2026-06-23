@@ -1,0 +1,16 @@
+feature,importance,feature_label
+category_grouped_furniture_decor,0.054997347,Category: Furniture Decor
+distinct_product_count,0.04610148,Distinct Product Count
+is_late_delivery,0.045030408,Late Delivery
+primary_payment_type_debit_card,0.04419016,Payment: Debit Card
+category_grouped_watches_gifts,0.041876968,Category: Watches Gifts
+category_grouped_computers_accessories,0.04179486,Category: Computers Accessories
+category_grouped_other,0.04028287,Category: Other
+state_grouped_RJ,0.03955049,State: Rj
+item_count,0.038664076,Item Count
+category_grouped_cool_stuff,0.037965227,Category: Cool Stuff
+total_installments,0.037070215,Payment Installments
+state_grouped_PR,0.036235943,State: Pr
+total_price,0.03390435,Order Value (R$)
+category_grouped_sports_leisure,0.033413667,Category: Sports Leisure
+purchase_dow,0.03188209,Purchase Day of Week

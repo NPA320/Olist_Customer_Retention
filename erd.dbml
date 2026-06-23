@@ -1,0 +1,80 @@
+// Paste toàn bộ nội dung file này vào https://dbdiagram.io để xem ERD trực quan
+
+Table customers {
+  customer_id varchar [pk]
+  customer_unique_id varchar [note: 'Định danh khách hàng thật - dùng cho RFM/segmentation']
+  customer_zip_code_prefix varchar
+  customer_city varchar
+  customer_state varchar
+}
+
+Table orders {
+  order_id varchar [pk]
+  customer_id varchar [ref: > customers.customer_id]
+  order_status varchar
+  order_purchase_timestamp timestamp
+  order_approved_at timestamp
+  order_delivered_carrier_date timestamp
+  order_delivered_customer_date timestamp
+  order_estimated_delivery_date timestamp
+}
+
+Table order_items {
+  order_id varchar [ref: > orders.order_id]
+  order_item_id int
+  product_id varchar [ref: > products.product_id]
+  seller_id varchar [ref: > sellers.seller_id]
+  shipping_limit_date timestamp
+  price decimal
+  freight_value decimal
+}
+
+Table order_payments {
+  order_id varchar [ref: > orders.order_id]
+  payment_sequential int
+  payment_type varchar
+  payment_installments int
+  payment_value decimal
+}
+
+Table order_reviews {
+  review_id varchar
+  order_id varchar [ref: > orders.order_id]
+  review_score int
+  review_comment_title varchar
+  review_comment_message varchar
+  review_creation_date timestamp
+  review_answer_timestamp timestamp
+}
+
+Table products {
+  product_id varchar [pk]
+  product_category_name varchar
+  product_name_lenght int
+  product_description_lenght int
+  product_photos_qty int
+  product_weight_g int
+  product_length_cm int
+  product_height_cm int
+  product_width_cm int
+}
+
+Table sellers {
+  seller_id varchar [pk]
+  seller_zip_code_prefix varchar
+  seller_city varchar
+  seller_state varchar
+}
+
+Table geolocation {
+  geolocation_zip_code_prefix varchar
+  geolocation_lat decimal
+  geolocation_lng decimal
+  geolocation_city varchar
+  geolocation_state varchar
+}
+
+Table category_translation {
+  product_category_name varchar [pk]
+  product_category_name_english varchar
+}

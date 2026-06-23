@@ -1,0 +1,11 @@
+pandas
+numpy
+sqlalchemy
+psycopg2-binary
+scikit-learn
+xgboost
+matplotlib
+seaborn
+jupyter
+notebook
+pip install python-dotenv
