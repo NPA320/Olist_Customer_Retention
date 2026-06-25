@@ -62,7 +62,7 @@ budget cho top 20% (khả năng quay lại tự nhiên cao hơn), loại bottom 
 khỏi campaign retention (ROI thấp), thay vì gửi campaign tràn lan cho
 100% khách hàng.
 
-**Hạn chế cần nêu rõ**: việc khách quay lại có thể phụ thuộc nhiều hơn vào
+**Hạn chế**: việc khách quay lại có thể phụ thuộc nhiều hơn vào
 trải nghiệm hậu mua hàng và hoạt động marketing (không có trong dataset)
 hơn là đặc điểm giao dịch ban đầu — đây là hướng mở rộng tốt nếu có thêm
 dữ liệu (email engagement, customer service tickets, app usage...).

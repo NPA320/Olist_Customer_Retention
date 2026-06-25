@@ -1,6 +1,6 @@
 # EDA Summary — Olist Customer Retention Project
 
-> Dưới đây là các số liệu được trích xuất từ quá trình chạy notebook 01_eda.ipynb và các data tương ứng. File này đóng vai trò là nguồn để viết phần "Key Findings" trong README và bullet point CV.
+> Dưới đây là các số liệu được trích xuất từ quá trình chạy notebook 01_eda.ipynb và các data tương ứng.
 
 ## 1. Order Status
 - % delivered: **97.02%** (96,478 đơn hàng)

@@ -1,10 +1,10 @@
 """
-load_data.py
+data_loader.py
 Mục đích: Đọc 9 file CSV gốc của Olist và load vào các bảng Postgres
 đã được tạo sẵn bởi sql/01_create_tables.sql.
 
 Cách chạy:
-    python scripts/load_data.py
+    python scripts/data_loader.py
 
 Yêu cầu trước khi chạy:
     1. Đã chạy sql/01_create_tables.sql để tạo schema
