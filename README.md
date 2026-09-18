@@ -1,4 +1,4 @@
-# Olist Customer Retention & Repeat-Purchase Analysis
+# Olist
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
@@ -6,11 +6,11 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange)
 ![XGBoost](https://img.shields.io/badge/XGBoost-Model-green)
 
-End-to-end data analytics project on the [Olist Brazilian E-Commerce dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (~99K orders, ~96K customers, 2016-2018) — from raw SQL to a Power BI dashboard, covering data engineering, customer segmentation, predictive modeling, and cohort analysis.
+End-to-end data analytics project on the [Olist Brazilian E-Commerce dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (~99K orders, ~96K customers, 2016-2018) — from raw SQL to a Power BI dashboard, covering data engineering, customer segmentation.
 
 ## Business Problem
 
-Olist's customer repeat-purchase rate is critically low (~3%). This project identifies **which customers are most likely to return**, **what drives (or fails to drive) repeat purchase**, and **how retention budget should be allocated** for maximum ROI.
+Olist's customer repeat-purchase rate is critically low (~3%). This project identifies **which customers are most likely to return**.
 
 ## Key Results
 
@@ -54,7 +54,7 @@ olist-customer-retention/
 ├── reports/
 │   ├── figures/
 │   ├── eda_summary.md│
-│   └── final_summary.md
+│   ├── segment_summary.md
 ├── dashboard/
 │   └── olist_dashboard.pbix
 ├── erd.dbml
@@ -86,36 +86,6 @@ olist-customer-retention/
 
 - Dataset covers Brazil, 2016–2018 only; findings may not generalize to other markets/periods
 - The prediction model uses only static first-order features — no post-purchase engagement data (email, customer service, app usage) was available
-
-
-## How to Reproduce
-
-```bash
-# 1. Clone and set up environment
-git clone <your-repo-url>
-cd olist-customer-retention
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
-# 2. Set up PostgreSQL credentials
-cp .env.example .env  # then fill in your real DB credentials
-
-# 3. Download the dataset from Kaggle into data/raw/
-#    https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
-
-# 4. Run SQL + Python pipeline in order
-psql -U postgres -d olist_db -f sql/01_create_tables.sql
-python scripts/load_data.py
-psql -U postgres -d olist_db -f sql/02_data_cleaning_and_join.sql
-python scripts/export_orders_flat.py
-psql -U postgres -d olist_db -f sql/03_rfm_features.sql
-python scripts/export_customer_rfm.py
-
-# 5. Run notebooks in order (01 -> 04) inside notebooks/
-
-# 6. Open dashboard/olist_dashboard.pbix in Power BI Desktop
-```
 
 ## Author
 
